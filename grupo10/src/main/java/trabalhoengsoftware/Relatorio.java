@@ -3,7 +3,6 @@ package trabalhoengsoftware;
 import java.util.List;
 
 public class Relatorio {
-    // private Usuario usuario;
     private List<Conteudo> conteudoAssistido;
     private int tempoTotalAssistido;
 
@@ -15,8 +14,6 @@ public class Relatorio {
 
     public String gerarRelatorio() {
         StringBuilder relatorio = new StringBuilder();
-        // relatorio.append("Relatório do Usuário:
-        // ").append(usuario.getNome()).append("\n");
         relatorio.append("Conteúdo Assistido: \n");
         for (Conteudo conteudo : conteudoAssistido) {
             relatorio.append(" - ").append(conteudo.getTitulo()).append(" (").append(conteudo.getAnoDeProducao())

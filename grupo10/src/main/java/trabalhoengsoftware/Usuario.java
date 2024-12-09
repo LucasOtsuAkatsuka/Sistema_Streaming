@@ -131,4 +131,12 @@ public class Usuario extends Pessoa {
     public void pesquisarConteudo(String conteudo) {
         System.out.println(this.getNome() + " está pesquisando por: " + conteudo);
     }
+
+    public List<Perfil> getPerfis() {
+        return perfis;
+    }
+
+    public Assinatura getAssinatura() {
+        return assinatura;
+    }
 }
