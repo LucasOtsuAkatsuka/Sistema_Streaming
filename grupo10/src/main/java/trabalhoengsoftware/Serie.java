@@ -1,21 +1,30 @@
 package trabalhoengsoftware;
 
-public class Serie extends Conteudo{
-    
-    //Atributos
-    private int numeroTemporadas;
-    private int episodiosPorTemporada;
-    private int duracaoEpisodio;
+import java.util.List;
 
-    //Métodos
-    Serie(int numeroTemporadas, int episodiosPorTemporada, int duracaoEpisodio){
+public class Serie extends Conteudo {
+    private int numeroTemporadas;
+    private int[] episodiosPorTemporadas; // Cada posição representa o número de episódios por temporada.
+
+    public Serie(String titulo, int anoDeProducao, List<String> legendasDisponiveis, List<String> audiosDisponiveis,
+                 String descricao, List<String> nomeAtores, String nomeDiretor, List<String> generos,
+                 int numeroTemporadas, int[] episodiosPorTemporadas) {
+        super(titulo, anoDeProducao, legendasDisponiveis, audiosDisponiveis, descricao, nomeAtores, nomeDiretor, generos);
         this.numeroTemporadas = numeroTemporadas;
-        this.episodiosPorTemporada = episodiosPorTemporada;
-        this.duracaoEpisodio = duracaoEpisodio;
+        this.episodiosPorTemporadas = episodiosPorTemporadas;
     }
-    public int duracaoTotalSerie(){
-        int total = 0;
-        total = this.duracaoEpisodio*this.episodiosPorTemporada*this.numeroTemporadas;
-        return (total);
+
+    // Getter para o número de temporadas
+    public int getNumeroTemporadas() {
+        return numeroTemporadas;
+    }
+
+    // Calcula a duração total da série (em minutos)
+    public int duracaoTotalSerie(int duracaoMediaPorEpisodio) {
+        int totalMinutos = 0;
+        for (int episodios : episodiosPorTemporadas) {
+            totalMinutos += episodios * duracaoMediaPorEpisodio;
+        }
+        return totalMinutos;
     }
 }

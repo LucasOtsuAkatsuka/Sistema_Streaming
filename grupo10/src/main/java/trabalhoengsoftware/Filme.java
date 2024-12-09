@@ -1,15 +1,17 @@
 package trabalhoengsoftware;
 
-public class Filme extends Conteudo {
-    
-    //Atributos
-    private int duracao;
+import java.util.List;
 
-    //Mètodos
-    public void setDuracao(int duracao){
+public class Filme extends Conteudo {
+    private int duracao; // em minutos
+
+    public Filme(String titulo, int anoDeProducao, List<String> legendasDisponiveis, List<String> audiosDisponiveis,
+                 String descricao, List<String> nomeAtores, String nomeDiretor, List<String> generos, int duracao) {
+        super(titulo, anoDeProducao, legendasDisponiveis, audiosDisponiveis, descricao, nomeAtores, nomeDiretor, generos);
         this.duracao = duracao;
     }
-    public int getDuracao(){
-        return (this.duracao);
+
+    public int getDuracao() {
+        return duracao;
     }
 }
