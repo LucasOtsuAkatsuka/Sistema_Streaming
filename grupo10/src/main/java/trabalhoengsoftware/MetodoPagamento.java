@@ -7,8 +7,7 @@ public class MetodoPagamento {
         this.tipoPagamento = tipoPagamento;
     }
 
-    @Override
-    public String toString() {
+    public String getTipoPagamento() {
         return tipoPagamento;
     }
 }
