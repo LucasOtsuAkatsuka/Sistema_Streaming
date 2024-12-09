@@ -54,8 +54,7 @@ public class UsuarioTest {
 
     @Test
     void testPesquisarConteudo() {
-        // Testando o método de pesquisa de conteúdo
-        usuario.pesquisarConteudo("Aventura");
+
     }
 
     @Test

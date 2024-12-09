@@ -185,8 +185,12 @@ public class Main {
                 if (usuarioLogado.isAssinante()) {
                     System.out.println("1. Cancelar Assinatura");
                     System.out.println("2. gerenciar Perfis");
+                    System.out.println("3. Assistir Conteúdo");
+                    System.out.println("4. Pesquisar Conteudo");
+                    System.out.println("5. deslogar");
                 } else {
                     System.out.println("1. Virar Assinante");
+                    System.out.println("2. deslogar");
                 }
 
                 opcao = scanner.nextInt();
@@ -231,11 +235,56 @@ public class Main {
                         if (usuarioLogado.isAssinante()) {
                             usuarioLogado.gerenciarPerfis();
                         } else {
-                            System.out.println("Opção inválida");
+                            System.out.print("Tem certeza que deseja deslogar? (sim/nao): ");
+                            String confirmacao = scanner.nextLine();
+
+                            if (confirmacao.equalsIgnoreCase("sim")) {
+                                contaLogada.logout();
+                                contaLogada = null;
+                                loginSucesso = false;
+                            } else {
+                                System.out.println("Operação cancelada.");
+                            }
+                        }
+                        break;
+                    case 3:
+                        System.out.println("\nConteúdos Disponíveis:");
+                        for (int i = 0; i < conteudos.size(); i++) {
+                            System.out.println((i + 1) + ". " + conteudos.get(i).getTitulo() + " vizualizações: "
+                                    + conteudos.get(i).getVizualizacoes());
+                        }
+
+                        System.out.print("Escolha o número do conteúdo a ser assistido: ");
+                        int indexAssistir = scanner.nextInt() - 1;
+                        scanner.nextLine();
+
+                        if (indexAssistir >= 0 && indexAssistir < conteudos.size()) {
+                            conteudos.get(indexAssistir).somarVizualizacoes();
+                            System.out.println("Assistindo " + conteudos.get(indexAssistir).getTitulo());
+                        } else {
+                            System.out.println("Índice inválido.");
+                        }
+
+                        break;
+                    case 4:
+                        System.out.println("Digite o nome que deseja pesquisar: ");
+                        String tituloConteudo = scanner.nextLine();
+                        Usuario usuarioLogadoPesquisa = (Usuario) contaLogada;
+                        usuarioLogadoPesquisa.pesquisarConteudo(conteudos, tituloConteudo);
+                        break;
+                    case 5:
+                        System.out.print("Tem certeza que deseja deslogar? (sim/nao): ");
+                        String confirmacao = scanner.nextLine();
+
+                        if (confirmacao.equalsIgnoreCase("sim")) {
+                            contaLogada.logout();
+                            contaLogada = null;
+                            loginSucesso = false;
+                        } else {
+                            System.out.println("Operação cancelada.");
                         }
                         break;
                     default:
-                        System.out.println("Opção inválida");
                 }
             } else if (loginSucesso && contaLogada.isEhAdm() == true) {
                 Administrador administradorLogado = (Administrador) contaLogada;

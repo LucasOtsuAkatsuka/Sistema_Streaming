@@ -128,8 +128,42 @@ public class Usuario extends Pessoa {
         }
     }
 
-    public void pesquisarConteudo(String conteudo) {
-        System.out.println(this.getNome() + " está pesquisando por: " + conteudo);
+    public void pesquisarConteudo(List<Conteudo> conteudos, String titulo) {
+        boolean encontrado = false;
+
+        for (Conteudo conteudo : conteudos) {
+            if (conteudo.getTitulo().equalsIgnoreCase(titulo)) {
+                encontrado = true;
+                System.out.println("Conteúdo encontrado!");
+                System.out.println("Título: " + conteudo.getTitulo());
+                System.out.println("Ano de Produção: " + conteudo.getAnoDeProducao());
+                System.out.println("Legendas Disponíveis: " + String.join(", ", conteudo.getLegendasDisponiveis()));
+                System.out.println("Áudios Disponíveis: " + String.join(", ", conteudo.getAudiosDisponiveis()));
+                System.out.println("Descrição: " + conteudo.getDescricao());
+                System.out.println("Atores: " + String.join(", ", conteudo.getNomeAtores()));
+                System.out.println("Diretor: " + conteudo.getNomeDiretor());
+                System.out.println("Gêneros: " + String.join(", ", conteudo.getGeneros()));
+
+                // Caso seja um Filme, mostre a duração
+                if (conteudo instanceof Filme) {
+                    Filme filme = (Filme) conteudo;
+                    System.out.println("Duração: " + filme.getDuracao() + " minutos");
+                }
+
+                // Caso seja uma Série, mostre as temporadas e episódios
+                if (conteudo instanceof Serie) {
+                    Serie serie = (Serie) conteudo;
+                    System.out.println("Temporadas: " + serie.getNumeroTemporadas());
+                    System.out.println("Episódios por Temporada: " + serie.getEpisodiosPorTemporadas());
+                }
+
+                System.out.println("------------------------------------");
+            }
+        }
+
+        if (!encontrado) {
+            System.out.println("Conteúdo com o título \"" + titulo + "\" não encontrado.");
+        }
     }
 
     public List<Perfil> getPerfis() {

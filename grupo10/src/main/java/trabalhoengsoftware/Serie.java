@@ -26,4 +26,8 @@ public class Serie extends Conteudo {
         totalMinutos = episodiosPorTemporadas * duracaoMediaPorEpisodio * numeroTemporadas;
         return totalMinutos;
     }
+
+    public int getEpisodiosPorTemporadas() {
+        return episodiosPorTemporadas;
+    }
 }
