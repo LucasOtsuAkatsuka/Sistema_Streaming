@@ -49,7 +49,7 @@ public class Usuario extends Pessoa {
                     System.out.println("Máximo de 4 perfis alcançado.");
                     return;
                 }
-                System.out.print("Digite o nome do perfil: ");
+                System.out.print("\nDigite o nome do perfil: ");
                 String nomePerfil = scanner.nextLine();
                 System.out.print("É infantil? (1 - Sim, 0 - Não): ");
                 int ehInfantilEscolha = scanner.nextInt();
@@ -68,10 +68,10 @@ public class Usuario extends Pessoa {
             // Editar Perfil
             case 2:
                 if (perfis.isEmpty()) {
-                    System.out.println("Nenhum perfil disponível para editar.");
+                    System.out.println("\nNenhum perfil disponível para editar.");
                     return;
                 }
-                System.out.println("Perfis disponíveis:");
+                System.out.println("\nPerfis disponíveis:");
                 for (int i = 0; i < perfis.size(); i++) {
                     System.out.println((i + 1) + ". " + perfis.get(i).getNome());
                 }
@@ -93,9 +93,9 @@ public class Usuario extends Pessoa {
             // Listar Perfis
             case 3:
                 if (perfis.isEmpty()) {
-                    System.out.println("Nenhum perfil cadastrado.");
+                    System.out.println("\nNenhum perfil cadastrado.");
                 } else {
-                    System.out.println("Perfis cadastrados:");
+                    System.out.println("\nPerfis cadastrados:");
                     for (Perfil perfil : perfis) {
                         System.out.println(perfil.getNome() + " (Infantil: " + perfil.isEhInfantil() + ")");
                     }
@@ -105,10 +105,10 @@ public class Usuario extends Pessoa {
             // Deletar Perfil
             case 4:
                 if (perfis.isEmpty()) {
-                    System.out.println("Nenhum perfil disponível para deletar.");
+                    System.out.println("\nNenhum perfil disponível para deletar.");
                     return;
                 }
-                System.out.println("Perfis disponíveis:");
+                System.out.println("\nPerfis disponíveis:");
                 for (int i = 0; i < perfis.size(); i++) {
                     System.out.println((i + 1) + ". " + perfis.get(i).getNome());
                 }
@@ -120,7 +120,7 @@ public class Usuario extends Pessoa {
                     System.out.println("Perfil inválido.");
                 } else {
                     Perfil perfilDeletado = perfis.remove(indicePerfilDeletar);
-                    System.out.println("Perfil " + perfilDeletado.getNome() + " deletado com sucesso.");
+                    System.out.println("\nPerfil " + perfilDeletado.getNome() + " deletado com sucesso.");
                 }
                 break;
             default:

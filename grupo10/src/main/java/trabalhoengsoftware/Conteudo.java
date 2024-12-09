@@ -14,7 +14,7 @@ public abstract class Conteudo {
     private List<String> generos;
 
     public Conteudo(String titulo, int anoDeProducao, List<String> legendasDisponiveis, List<String> audiosDisponiveis,
-                    String descricao, List<String> nomeAtores, String nomeDiretor, List<String> generos) {
+            String descricao, List<String> nomeAtores, String nomeDiretor, List<String> generos) {
         this.titulo = titulo;
         this.anoDeProducao = anoDeProducao;
         this.legendasDisponiveis = legendasDisponiveis;
@@ -63,14 +63,37 @@ public abstract class Conteudo {
         return generos;
     }
 
-    public void setAudiosDisponiveis(List<String> audiosDisponiveis) {
-        this.audiosDisponiveis = audiosDisponiveis;
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public void setAnoDeProducao(int anoDeProducao) {
+        this.anoDeProducao = anoDeProducao;
     }
 
     public void setLegendasDisponiveis(List<String> legendasDisponiveis) {
         this.legendasDisponiveis = legendasDisponiveis;
     }
-    
+
+    public void setAudiosDisponiveis(List<String> audiosDisponiveis) {
+        this.audiosDisponiveis = audiosDisponiveis;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public void setNomeAtores(List<String> nomeAtores) {
+        this.nomeAtores = nomeAtores;
+    }
+
+    public void setNomeDiretor(String nomeDiretor) {
+        this.nomeDiretor = nomeDiretor;
+    }
+
+    public void setGeneros(List<String> generos) {
+        this.generos = generos;
+    }
 
     // Método para incrementar as visualizações
     public void somarVizualizacoes() {
