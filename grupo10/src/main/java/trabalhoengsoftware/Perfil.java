@@ -7,6 +7,7 @@ public class Perfil {
     private String nome;
     private boolean ehInfantil;
     private List<String> generosFavoritos;
+    private Relatorio relatorio;
 
     public Perfil(String nome, boolean ehInfantil, List<String> generosFavoritos) {
         this.nome = nome;
