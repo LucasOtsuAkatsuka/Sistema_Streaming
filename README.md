@@ -2,12 +2,21 @@
 
 ## Descrição
 
-O objetivo deste documento é definir os requisitos funcionais e não funcionais para o
-desenvolvimento de um sistema de streaming de vídeos. Este sistema permitirá aos
-usuários assistirem a conteúdos variados mediante um cadastro prévio, incluindo opções de
-perfis personalizáveis, assinaturas pagas e um catálogo diversificado de filmes e séries.
-Este projeto está sendo desenvolvido na matéria de Engenharia de software, pelos alunos
-da Universidade Federal de Minas Gerais.
+Este documento apresenta a especificação, o projeto arquitetural e o
+detalhamento do sistema de streaming, projetado para oferecer uma experiência eficiente
+para os usuários na navegação, personalização de perfis, e consumo de conteúdos. O
+sistema é voltado tanto para usuários finais quanto para administradores, garantindo
+flexibilidade no gerenciamento de assinaturas, conteúdo e relatórios e formas de
+pagamentos.
+O objetivo principal do sistema é permitir que os usuários encontrem, assistam e
+gerenciem conteúdos de maneira simplificada, enquanto administradores possam
+gerenciar os usuários e os conteúdos do sistema. A aplicação segue uma arquitetura
+multicamadas.
+Além disso, esta documentação detalha os requisitos funcionais através de diagramas de
+casos de uso, descreve os cenários de interação dos atores com o sistema, apresenta a
+arquitetura projetada com diagramas de componentes, e explora o projeto detalhado com
+diagramas de classes, sequência e atividades.
+
 
 ## Tecnologias Utilizadas
 
@@ -71,8 +80,22 @@ Para rodar os testes unitarios, use:
 ```bash
 mvn test  
 ```
+## Casos de uso
+
+![Captura de tela 2025-02-14 195438](https://github.com/user-attachments/assets/d86b91d9-2cb2-45da-85c2-11b56351ba5a)
+
+## Diagrama dos casos de uso
+
+![Diagrama sem nome drawio (4)](https://github.com/user-attachments/assets/0627c6a2-2b83-4284-b0f3-053440f02e14)
 
 
+## Arquitetura
+
+![Captura de tela 2025-02-14 195913](https://github.com/user-attachments/assets/f4db96c3-9299-46cd-af7d-41b895311074)
+
+## Diagrama de Classes
+
+![Diagrama sem nome drawio (6)](https://github.com/user-attachments/assets/46cc1ace-0273-4e8c-ba75-47e0095f36a6)
 
 
 ## Autores
